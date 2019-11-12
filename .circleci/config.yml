@@ -13,6 +13,15 @@ jobs:
       - run: |
           echo "Foo"; exit 0
 
+  ci-job:
+    executor: my-executor
+    steps:
+      - checkout
+      - run: |
+          echo "I will deploy"
+          echo "I will survive"
+          exit 0
+
 workflows:
   version: 2
 
@@ -22,3 +31,8 @@ workflows:
           filters:
             branches:
               ignore: /master/
+      - cd-job:
+          filters:
+            branches:
+              only: /master/
+            
