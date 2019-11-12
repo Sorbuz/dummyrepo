@@ -11,7 +11,7 @@ jobs:
     steps:
       - checkout
       - run: |
-          echo "Foo"; exit 1
+          echo "Foo"; exit 0
 
 workflows:
   version: 2
